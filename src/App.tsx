@@ -8,10 +8,20 @@ const App = () => {
       <h2>Rick and Morty</h2>
       {
         !isLoading && <>
-          {data?.data.map(item => (
+          {data?.results.map(item => (
+            <>
             <div>
               <h3>{item.name}</h3>
+              <p>{item.status}</p>
+              <p>{item.species}</p>
+              <p>{item.type}</p>
+              <p>{item.gender}</p>
+              {/* <p>{item.origin}</p> */}
+              <img src={item.image} alt="" /><br />
+              <a href={item.episode}>Aparições</a><br />
+              <a href={item.url}>Saiba mais sobre o personagem</a>
             </div>
+            </>
           ))}
         </>
       }
