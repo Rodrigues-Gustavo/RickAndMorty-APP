@@ -1,12 +1,18 @@
-import { useCharacterData } from "./services/endpoint";
+import { useCharacterData } from "./hooks/useCharacter";
+import GlobalStyles from "./GlobalStyle";
+import Header from "./components/Header"
+import Search from "./components/Search";
+
 
 const App = () => {
   const { data, isLoading, isError } = useCharacterData();
 
   return (
     <>
-      <h2>Rick and Morty</h2>
-      {
+    <GlobalStyles />
+    <Header />
+    <Search />
+      {/* {
         !isLoading && <>
           {data?.results.map(item => (
             <>
@@ -16,7 +22,7 @@ const App = () => {
               <p>{item.species}</p>
               <p>{item.type}</p>
               <p>{item.gender}</p>
-              {/* <p>{item.origin}</p> */}
+              <p>{item.origin}</p>
               <img src={item.image} alt="" /><br />
               <a href={item.episode}>Aparições</a><br />
               <a href={item.url}>Saiba mais sobre o personagem</a>
@@ -26,7 +32,7 @@ const App = () => {
         </>
       }
       {isLoading && <p>carregando.....................</p>}
-      {isError && <p>Deu algum erro</p>}
+      {isError && <p>Deu algum erro</p>} */}
     </>
   )
 }
